@@ -1,0 +1,39 @@
+{
+  "name": "zero-knowledge-regulatory-reporting",
+  "version": "1.0.0",
+  "private": true,
+  "description": "zk-SNARK-powered platform for AML/CFT compliance without exposing personal transaction data",
+  "author": "Muhammad Anus",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build:circuits": "node scripts/build-circuits.js",
+    "setup:ptau": "node scripts/setup-ptau.js",
+    "prove": "node src/cli/proofgen.js",
+    "verify": "node src/cli/verify.js",
+    "hardhat": "hardhat",
+    "compile": "hardhat compile",
+    "test": "jest --runInBand",
+    "lint": "eslint .",
+    "docs": "make -C whitepaper",
+    "format": "prettier -w ."
+  },
+  "dependencies": {
+    "circomlibjs": "^0.0.8",
+    "commander": "^12.1.0",
+    "elliptic": "^6.5.7",
+    "merkletreejs": "^0.4.0",
+    "poseidon-lite": "^0.2.2",
+    "snarkjs": "^0.7.5"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "dotenv": "^16.4.5",
+    "eslint": "^9.10.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "hardhat": "^2.22.12",
+    "jest": "^29.7.0",
+    "prettier": "^3.3.3"
+  }
+}
