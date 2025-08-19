@@ -398,5 +398,5 @@ Cite this work:
   title        = {Zero-Knowledge Regulatory Reporting: zk-SNARK-Powered Platform for AML/CFT Compliance},
   year         = {2025},
   publisher    = {GitHub},
-  howpublished = {\url{https://github.com/USERNAME/Zero-Knowledge-Regulatory-Reporting}}
+  howpublished = {\url{https://github.com/muhammadanusphd/Zero-Knowledge-Regulatory-Reporting}}
 }
