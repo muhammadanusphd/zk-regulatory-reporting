@@ -307,7 +307,7 @@ Then re-run:
 npm run prove
 npm run verify
 
-10) Research Notes (What to say to reviewers)
+10) Research Notes
 
 Why ZK for AML/CFT?
 Because it reduces data exposure while keeping verifiability. Regulators see proofs instead of raw PII.
