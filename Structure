@@ -1,0 +1,35 @@
+Zero-Knowledge-Regulatory-Reporting/
+│── README.md
+│── LICENSE
+│── CITATION.cff
+│── CONTRIBUTING.md
+│── CODE_OF_CONDUCT.md
+│── package.json
+│── package-lock.json
+│
+├── src/
+│   ├── circuits/           # zk-SNARK circuits (Circom)
+│   │   └── aml_verifier.circom
+│   ├── cli/                # CLI for proving/verification
+│   │   ├── proofgen.js
+│   │   └── verify.js
+│   └── contracts/          # Solidity verifier + compliance contract
+│       ├── Verifier.sol
+│       └── RegCompliance.sol
+│
+├── scripts/                # Automation scripts
+│   ├── build-circuits.js
+│   └── setup-ptau.js
+│
+├── tests/                  # Jest unit tests
+│   └── proof.test.js
+│
+├── docs/                   # Research docs
+│   ├── ARCHITECTURE.md
+│   ├── ROADMAP.md
+│   ├── PRIVACY.md
+│   └── SECURITY.md
+│
+└── whitepaper/             # Academic whitepaper (LaTeX)
+    ├── main.tex
+    └── Makefile
