@@ -1,0 +1,46 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb}
+\usepackage{booktabs}
+\usepackage{enumitem}
+
+\title{Zero-Knowledge Regulatory Reporting:\\ zk-SNARK-Powered AML/CFT Compliance without Exposing Personal Transaction Data}
+\author{Muhammad Anus \\ Universiti Teknologi Malaysia \\ Supervisor: Prof. Ts. Dr. MD Asri bin Ngadi}
+\date{August 19, 2025}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We propose a regulatory reporting platform that enables AML/CFT verification using zero-knowledge proofs (zk-SNARKs). Regulated entities demonstrate compliance predicates (threshold limits, non-sanctioned status, and KYC membership) without revealing personal transaction data.
+\end{abstract}
+
+\section{Introduction}
+Balancing privacy with AML/CFT is challenging. We explore zk-SNARKs to prove compliance predicates publicly while keeping private data secret.
+
+\section{Model}
+Public inputs: AML threshold, KYC Merkle root, Sanctions Merkle root, and a transaction commitment.
+Private inputs: transaction amount, user attributes preimage, Merkle inclusion paths, and a flag proving non-membership in sanctions.
+
+\section{Circuit Design}
+We implement a Circom circuit with Poseidon commitments, inclusion proofs for KYC membership, and a constraint that the amount is at most the threshold. Sanctions non-membership uses a complement-trick: prover supplies a path proving membership of a disjoint commitment that implies exclusion (or uses a bit witness checked against a root).
+
+\section{Verifier Integration}
+We provide a CLI (snarkjs) and a Solidity registry contract to log compliance attestations. The on-chain verifier uses Groth16 verifying keys.
+
+\section{Security and Limitations}
+Trusted setup risks; stale roots; oracle integrity; front-running. Future work: recursive proofs, universal setup (Plonk/Halo2), velocity-based predicates, formal soundness proofs.
+
+\section{Conclusion}
+ZK proofs can enable compliance attestations without revealing PII, offering a promising path for privacy-preserving regulation.
+
+\bibliographystyle{abbrv}
+\begin{thebibliography}{9}
+\bibitem{zkp} Bünz et al. \textit{Zether: Towards Privacy in Account-Based Cryptocurrencies}.
+\bibitem{snarkjs} \texttt{snarkjs} documentation.
+\bibitem{circom} \texttt{circom} documentation.
+\end{thebibliography}
+
+\end{document}
